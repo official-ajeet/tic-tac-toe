@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="msg-container">
+      <p id="msg">Turn of 'O'</p>
+    </div>
+
+    <main>
+      <h1>Tic Tac Toe</h1>
+      <div class="container">
+        <div class="game">
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+        </div>
+        
+        <div class="set1">
+          <div class="hide" id="cross-line1"></div>
+          <div class="hide" id="cross-line2"></div>
+          <div class="hide" id="cross-line3"></div>
+        </div>
+
+        <div class="set2">
+          <div class="hide" id="cross-line4"></div>
+          <div class="hide" id="cross-line5"></div>
+          <div class="hide" id="cross-line6"></div>
+        </div>
+
+        <div class="set3">
+          <div class="hide" id="cross-line7"></div>
+          <div class="hide" id="cross-line8"></div>
+        </div>
+      </div>
+      <button id="newgame-button">New Game</button>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
