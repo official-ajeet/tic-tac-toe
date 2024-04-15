@@ -13,6 +13,7 @@ let line7 = document.querySelector("#cross-line7");
 let line8 = document.querySelector("#cross-line8");
 
 let turnO = true;
+// playBackgroundSound();
 
 const winPatterns = [
   [0, 1, 2],
@@ -26,6 +27,7 @@ const winPatterns = [
 ];
 
 const resetGame = () => {
+  playStartSound();
   turnO = true;
   enableBoxes();
   msg.innerText = "Turn of 'O'";
@@ -38,7 +40,7 @@ let count = 0;
 
 boxes.forEach((box) => {
   box.addEventListener("click", (event) => {
-    console.log("box clicked");
+    playClickSound();
     count++;
     if (turnO) {
       msg.innerText = "Turn of 'X'";
@@ -74,6 +76,7 @@ const showWinner = (winner) => {
   disableBoxes();
 };
 const gameDraw = () => {
+  playTieSound();
   msg.innerText = "Oops! Game is draw";
   msgContainer.classList.remove("hide");
 };
@@ -118,6 +121,7 @@ const checkWinner = () => {
         }
 
         showWinner(pos1Val);
+        playWinSound();
         count = 0;
       }
       if (count == 9) {
@@ -128,5 +132,37 @@ const checkWinner = () => {
     }
   }
 };
+
+const clickSound = document.getElementById('clickSound');
+const markSound = document.getElementById('startSound');
+const winSound = document.getElementById('winSound');
+const tieSound = document.getElementById('tieSound');
+const backgroundSound = document.getElementById('backgroundSound');
+
+function playClickSound() {
+  clickSound.currentTime = 0; // Reset playback position (optional)
+  clickSound.play();
+}
+
+function playStartSound() {
+  markSound.currentTime = 0;
+  markSound.play();
+}
+
+function playWinSound() {
+  winSound.currentTime = 0;
+  winSound.play();
+}
+
+function playTieSound() {
+  tieSound.currentTime = 0;
+  tieSound.play();
+}
+
+function playBackgroundSound() {
+  backgroundSound.currentTime = 0;
+  backgroundSound.play();
+}
+
 
 newGameButton.addEventListener("click", resetGame);
